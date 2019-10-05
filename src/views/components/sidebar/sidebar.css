@@ -1,0 +1,12 @@
+.sidebar__container{
+    flex-basis: 20%;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: block;
+    padding: 1em 0;
+}
