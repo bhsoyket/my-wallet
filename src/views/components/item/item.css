@@ -1,6 +1,9 @@
 .item__container{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1em;
     margin: 5px;
+    background: #858080;
+    border: #858080 1px;
+    border-radius: 5px;
 }

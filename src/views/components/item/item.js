@@ -3,10 +3,11 @@ import './item.css'
 
 class Item extends Component {
     render() {
+        const item = this.props.item;
         return (
             <div className="item__container">
-                <p>Item Note</p>
-                <p>120/=</p>
+                <p>{item.note}</p>
+                <p>{item.amount}/=</p>
             </div>
         )
     }

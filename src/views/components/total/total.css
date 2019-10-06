@@ -1,0 +1,7 @@
+.total__container{
+    background: rgb(11, 186, 209);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 24px;
+}

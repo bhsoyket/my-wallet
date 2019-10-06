@@ -1,0 +1,55 @@
+.addItem__container{
+    background: #cccccc;
+    padding: 10px;
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* justify-content: start; */
+}
+
+.add-item__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.form__container{
+    display: flex;
+    width: 100%;
+}
+
+.input__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.input__container input{
+    width: 100%;
+    padding: 15px;
+    border: #cccccc 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 3px 0px;
+}
+
+.form__button{
+    background: #08b917;
+    color: #ffffff;
+    font-size: 16px;
+    width: 100px;
+    align-self: flex-end;
+    padding: 10px;
+    margin-right: 10px;
+    border: #218b29 1px;
+    border-radius: 5px;
+}
+
+.input__note{
+    flex-basis: 70%;
+}
+
+.input__amount{
+    flex-basis: 30%;
+}
