@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./addItem.css";
+import moment from "moment";
 class AddItem extends Component {
   state = {
     note: '',
@@ -18,7 +19,11 @@ class AddItem extends Component {
       alert('Please Input All Field');
       return;
     }
-    this.props.handleFormInput(this.state);
+    this.props.handleFormInput({...this.state, createdAt: moment().format()});
+    this.setState({
+      note: '',
+      amount: 0
+    })
 
   }
 
@@ -30,12 +35,12 @@ class AddItem extends Component {
               <div className="input__container input__note">
                 <label htmlFor="note">Note</label>
                 <input type="text" name="note" className="input__note" 
-                defaultValue={this.state.note} onChange={e => this.changeInput(e.target.name, e.target.value)} placeholder="Write your note" />
+                value={this.state.note} onChange={e => this.changeInput(e.target.name, e.target.value)} placeholder="Write your note" />
               </div>
               <div className="input__container input__amount">
                 <label htmlFor="amount">Amount</label>
                 <input type="number" name="amount" 
-                defaultValue={this.state.amount} onChange={e => this.changeInput(e.target.name, e.target.value)} />
+                value={this.state.amount} onChange={e => this.changeInput(e.target.name, e.target.value)} />
               </div>
             </div>
 

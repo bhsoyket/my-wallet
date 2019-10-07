@@ -5,20 +5,12 @@ import AddItem from '../../components/addItem'
 import Items from '../../components/items'
 
 class Details extends Component {
-    state = {
-        items: []
-    }
-    handleFormInput = data => {
-        this.setState(prevState => ({
-          items: [data, ...prevState.items]
-        }))
-      }
     render() {
         return (
             <div className="details__container">
-                <Total items = {this.state.items} />
-                <AddItem handleFormInput = {this.handleFormInput} />
-                <Items items = {this.state.items} />
+                <Total items = {this.props.items} />
+                <AddItem handleFormInput = {this.props.handleFormInput} />
+                <Items items = {this.props.items} />
             </div>
         )
     }

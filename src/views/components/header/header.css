@@ -1,8 +1,8 @@
 .header__container{
     width: 100%;
-    background: #08a77f;
-    padding: 5px 10px;
-    margin: 0%;
+    background: #0277bd;
+    padding: 5px 90px;
+    /* margin: 0%; */
     font-size: 30px;
     font-weight: 700;
 }

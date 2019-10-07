@@ -1,5 +1,5 @@
 .addItem__container{
-    background: #cccccc;
+    /* background: #cfd8dc; */
     padding: 10px;
     display: flex;
     /* flex-flow: row wrap; */
@@ -28,10 +28,13 @@
 .input__container input{
     width: 100%;
     padding: 15px;
-    border: #cccccc 1px;
     border-radius: 5px;
     font-size: 16px;
     margin: 3px 0px;
+}
+
+.input__container label{
+    color: #000000
 }
 
 .form__button{
@@ -42,7 +45,6 @@
     align-self: flex-end;
     padding: 10px;
     margin-right: 10px;
-    border: #218b29 1px;
     border-radius: 5px;
 }
 

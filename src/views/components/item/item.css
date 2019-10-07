@@ -3,7 +3,12 @@
     justify-content: space-between;
     padding: 1em;
     margin: 5px;
-    background: #858080;
-    border: #858080 1px;
+    background: #00838f;
     border-radius: 5px;
+}
+
+.item__container p{
+    width: 25%;
+    font-size: 18px;
+    color: #ffffff;
 }
