@@ -16,3 +16,8 @@ li {
     display: block;
     padding: 1em 0;
 }
+
+li a {
+    text-decoration: none;
+    color: white;
+}

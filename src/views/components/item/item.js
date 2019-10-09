@@ -9,7 +9,7 @@ class Item extends Component {
             <div className="item__container">
                 <p>{item.note}</p>
                 <p>{item.amount}/=</p>
-                <p>{moment().format('DD-MM-YYYY', item.createdAt)}</p>
+                <p>{moment(item.created_at).format('DD-MM-YYYY')}</p>
             </div>
         )
     }

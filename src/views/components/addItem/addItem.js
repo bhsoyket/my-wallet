@@ -19,7 +19,7 @@ class AddItem extends Component {
       alert('Please Input All Field');
       return;
     }
-    this.props.handleFormInput({...this.state, createdAt: moment().format()});
+    this.props.handleFormInput({...this.state, created_at: moment().format(), id: moment().unix()});
     this.setState({
       note: '',
       amount: 0

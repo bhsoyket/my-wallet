@@ -5,7 +5,7 @@ import AddItem from '../../components/addItem'
 import Items from '../../components/items'
 
 class Details extends Component {
-    render() {
+    render() {        
         return (
             <div className="details__container">
                 <Total items = {this.props.items} />
