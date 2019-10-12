@@ -12,3 +12,10 @@
     font-size: 18px;
     color: #ffffff;
 }
+
+.button__x{
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}

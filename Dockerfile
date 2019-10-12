@@ -6,9 +6,6 @@ LABEL version = "1.0"
 
 WORKDIR /app
 VOLUME [ "/app/src" ]
-# COPY . ./
-# RUN yarn
-# RUN yarn build
 
 RUN apk update && apk add yarn
 

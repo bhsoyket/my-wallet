@@ -10,7 +10,7 @@ class Details extends Component {
             <div className="details__container">
                 <Total items = {this.props.items} />
                 <AddItem handleFormInput = {this.props.handleFormInput} />
-                <Items items = {this.props.items} />
+                <Items items = {this.props.items} deleteItem = {this.props.deleteItem} />
             </div>
         )
     }

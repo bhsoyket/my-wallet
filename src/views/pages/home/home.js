@@ -21,6 +21,10 @@ class Home extends Component {
       });
   };
   componentDidMount() {
+    this.getAllItems();
+  }
+
+  getAllItems() {
     db.table("wallet")
       .toArray()
       .then(items => {
@@ -30,11 +34,22 @@ class Home extends Component {
       });
   }
 
+  deleteItem = id => {
+    db.table("wallet")
+      .delete(id)
+      .then(() => {
+        const newList = this.state.items.filter(item => item.id !== id);
+        this.setState({
+          items: newList
+        });
+      });
+  };
+
   onSelectDate = day => {
     this.setState({
       select_date: day
     });
-  }
+  };
 
   showItems() {
     return this.state.items.filter(
@@ -44,14 +59,13 @@ class Home extends Component {
   }
 
   render() {
-    console.log("test", this.state);
-
     return (
       <div className="home__container">
         <Header />
         <div className="main-content">
           <Sidebar onSelectDate={this.onSelectDate} items={this.state.items} />
           <Details
+            deleteItem={this.deleteItem}
             handleFormInput={this.handleFormInput}
             items={this.showItems()}
           />
