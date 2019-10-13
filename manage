@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$1" = "docker-build" ]; # app build
+then
+docker build -t my-wallet .
+elif [ "$1" = "docker-start" ]; # app run
+then
+docker run -it -p 3000:3000 my-wallet
+fi
