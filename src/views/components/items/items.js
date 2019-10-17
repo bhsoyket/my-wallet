@@ -6,7 +6,7 @@ class Items extends Component {
         return (
             <div>
                {this.props.items.map(item => (
-                    <Item key={item.id} item = {item} deleteItem = {this.props.deleteItem} />
+                    <Item key={item.docid} item = {item} deleteItem = {this.props.deleteItem} />
                 ))} 
             </div>
         )

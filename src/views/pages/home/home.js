@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import Sidebar from "../../components/sidebar";
 import Details from "../../components/details";
-import db from "../../../utils/db";
+// import db from "../../../utils/db";  // for indexDB
 import moment from "moment";
+import { firestore } from "../../../firebase/my-firebase"; // for firebae
 import "./home.css";
 
 class Home extends Component {
@@ -12,12 +13,26 @@ class Home extends Component {
     select_date: moment().format("DD-MM-YYYY")
   };
   handleFormInput = data => {
-    db.table("wallet")
+    // for indexDB
+    // db.table("wallet")
+    //   .add(data)
+    //   .then(() => {
+    //     this.setState(prevState => ({
+    //       items: [data, ...prevState.items]
+    //     }));
+    //   });
+
+    // for firebase
+    firestore
+      .collection("wallet")
       .add(data)
-      .then(() => {
+      .then(docref => {
         this.setState(prevState => ({
-          items: [data, ...prevState.items]
+          items: [{ ...data, docid: docref.id }, ...prevState.items]
         }));
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
       });
   };
   componentDidMount() {
@@ -25,23 +40,57 @@ class Home extends Component {
   }
 
   getAllItems() {
-    db.table("wallet")
-      .toArray()
+    // for indexDB
+    // db.table("wallet")
+    //   .toArray()
+    //   .then(items => {
+    //     this.setState({
+    //       items: items
+    //     });
+    //   });
+
+
+    // for firebase
+    firestore
+      .collection("wallet")
+      .get()
+      .then(snapshot => {
+        return snapshot.docs.map(doc => ({docid:doc.id, ...doc.data()}));
+      })
       .then(items => {
         this.setState({
           items: items
         });
+      })
+      .catch(function(error) {
+        console.log("Error getting documents: ", error);
       });
   }
 
   deleteItem = id => {
-    db.table("wallet")
-      .delete(id)
+    // for indexDB
+    // db.table("wallet")
+    //   .delete(id)
+    //   .then(() => {
+    //     const newList = this.state.items.filter(item => item.id !== id);
+    //     this.setState({
+    //       items: newList
+    //     });
+    //   });
+    
+    // for firebase
+    firestore
+      .collection("wallet")
+      .doc(id)
+      .delete()
       .then(() => {
-        const newList = this.state.items.filter(item => item.id !== id);
+        const newList = this.state.items.filter(item => item.docid !== id);
         this.setState({
           items: newList
         });
+      })
+      .catch(function(error) {
+        console.error("Error removing document: ", error);
       });
   };
 
