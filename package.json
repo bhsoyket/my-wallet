@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.5.0",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "firebase": "^7.2.0",
     "form-serialize": "^0.7.2",
     "moment": "^2.24.0",
